@@ -12,17 +12,3 @@ C:\Users\joasg\source\repos\pedra\pedra\obj\Debug\net7.0\refint\pedra.dll
 C:\Users\joasg\source\repos\pedra\pedra\obj\Debug\net7.0\pedra.pdb
 C:\Users\joasg\source\repos\pedra\pedra\obj\Debug\net7.0\pedra.genruntimeconfig.cache
 C:\Users\joasg\source\repos\pedra\pedra\obj\Debug\net7.0\ref\pedra.dll
-C:\Users\Diogo\Documents\Projetos VsCode\Trabalho_Bessa\marmore-granito-faculdade\bin\Debug\net7.0\pedra.exe
-C:\Users\Diogo\Documents\Projetos VsCode\Trabalho_Bessa\marmore-granito-faculdade\bin\Debug\net7.0\pedra.deps.json
-C:\Users\Diogo\Documents\Projetos VsCode\Trabalho_Bessa\marmore-granito-faculdade\bin\Debug\net7.0\pedra.runtimeconfig.json
-C:\Users\Diogo\Documents\Projetos VsCode\Trabalho_Bessa\marmore-granito-faculdade\bin\Debug\net7.0\pedra.dll
-C:\Users\Diogo\Documents\Projetos VsCode\Trabalho_Bessa\marmore-granito-faculdade\bin\Debug\net7.0\pedra.pdb
-C:\Users\Diogo\Documents\Projetos VsCode\Trabalho_Bessa\marmore-granito-faculdade\obj\Debug\net7.0\pedra.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Diogo\Documents\Projetos VsCode\Trabalho_Bessa\marmore-granito-faculdade\obj\Debug\net7.0\pedra.AssemblyInfoInputs.cache
-C:\Users\Diogo\Documents\Projetos VsCode\Trabalho_Bessa\marmore-granito-faculdade\obj\Debug\net7.0\pedra.AssemblyInfo.cs
-C:\Users\Diogo\Documents\Projetos VsCode\Trabalho_Bessa\marmore-granito-faculdade\obj\Debug\net7.0\pedra.csproj.CoreCompileInputs.cache
-C:\Users\Diogo\Documents\Projetos VsCode\Trabalho_Bessa\marmore-granito-faculdade\obj\Debug\net7.0\pedra.dll
-C:\Users\Diogo\Documents\Projetos VsCode\Trabalho_Bessa\marmore-granito-faculdade\obj\Debug\net7.0\refint\pedra.dll
-C:\Users\Diogo\Documents\Projetos VsCode\Trabalho_Bessa\marmore-granito-faculdade\obj\Debug\net7.0\pedra.pdb
-C:\Users\Diogo\Documents\Projetos VsCode\Trabalho_Bessa\marmore-granito-faculdade\obj\Debug\net7.0\pedra.genruntimeconfig.cache
-C:\Users\Diogo\Documents\Projetos VsCode\Trabalho_Bessa\marmore-granito-faculdade\obj\Debug\net7.0\ref\pedra.dll

@@ -7,12 +7,12 @@ Este projeto foi desenvolvido como parte de um trabalho de faculdade. Ele consis
 ## Guia:
 
 -[Fucionalidades](#fucionalidades)
-    [menu](#menu)
-    [cadastro](#cadastro)
-    [Lista](#Lista)
-    [Buscar](#buscar-por-codigo)
-    [Listar-Produto](#listar-por-pedreira)
-    [Sair](#Sair)
+    - [menu](#menu)
+    - [cadastro](#cadastro)
+    - [Lista](#Lista)
+    - [Buscar](#buscar-por-codigo)
+    - [Listar-Produto](#listar-por-pedreira)
+    - [Sair](#Sair)
 -[Erros](#Erros)
 
 ## fucionalidades

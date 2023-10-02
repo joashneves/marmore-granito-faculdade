@@ -6,14 +6,14 @@ Este projeto foi desenvolvido como parte de um trabalho de faculdade. Ele consis
 
 ## Guia:
 
--[Fucionalidades](#fucionalidades)
+- [Fucionalidades](#fucionalidades)
     - [menu](#menu)
     - [cadastro](#cadastro)
-    - [Lista](#Lista)
+    - [Lista](#lista)
     - [Buscar](#buscar-por-codigo)
     - [Listar-Produto](#listar-por-pedreira)
-    - [Sair](#Sair)
--[Erros](#Erros)
+    - [Sair](#sair)
+- [Erros](#erros)
 
 ## fucionalidades
 Aqui estão as seções que explicam como o código funciona e como são mostradas pelo sistema.

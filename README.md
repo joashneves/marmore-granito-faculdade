@@ -58,4 +58,8 @@ Se o usuário pressionar "5", o programa se encerrará.
 ## Erros
 Se algum erro for encontrado, será exibida uma mensagem de alerta com os detalhes do problema.
 
+Erro por numero em campo errado:
 ![numeroErro](./img/numero-invalido.png)
+
+Erro por campo não preenchido?
+![StringErro](./img/camponaopreenchido.PNG)

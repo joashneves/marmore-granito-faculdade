@@ -123,7 +123,7 @@ class Program
         Console.Write("Medidas: ");
         medidas = verificarNumDouble(Console.ReadLine()); //Escolhe as medidas
         Console.Write("Descrição: ");
-        descricao = (Console.ReadLine()); // Coloca a descriação
+        descricao = verificarString(Console.ReadLine()); // Coloca a descriação
 
     ESCOLHATIPO:
         // Escolhe o tipo baseado na opção dada
@@ -213,7 +213,7 @@ class Program
         Console.WriteLine("Escreva codigo do produto:");
         int codigoEncontrar;
         //Amarzena a variavel que o usuario quer procurar
-        codigoEncontrar = int.Parse(Console.ReadLine());
+        codigoEncontrar = int.Parse(verificarString(Console.ReadLine()));
 
         // Percorre a lista de produto que ja existe
         foreach (Produto produto in listaDeProdutos)
@@ -313,9 +313,7 @@ class Program
             try
             {
                 num = double.Parse(numero);
-
                 return num;
-
             }
             catch
             {
@@ -323,6 +321,21 @@ class Program
                 Console.WriteLine("Insira um novo numero:");
                 numero = Console.ReadLine();
             }
+        }
+
+    }
+
+    // Certifica se o campo não esta vazio
+    public static string verificarString(string palavra)
+    {
+        // Loop infinito para só sair da função apos colocar uma opção valida
+        while (true)
+        {
+            if (!string.IsNullOrEmpty(palavra)) { // Se o campo estiver preenchido ou null
+                return palavra; // Retorne a palavra
+            }
+            Console.WriteLine("CAMPO NÃO PREENCHIDO!!!"); //Mensagem de aviso
+            palavra = Console.ReadLine(); // COloque uma nova palavra
         }
 
     }

@@ -111,9 +111,3 @@ namespace Produtos
         }
     }
 }
-namespace pedra
-{
-    internal class Produtos
-    {
-    }
-}

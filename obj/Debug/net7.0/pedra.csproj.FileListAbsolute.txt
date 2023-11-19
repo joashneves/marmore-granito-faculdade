@@ -26,3 +26,17 @@ C:\Users\joas.neves\Source\Repos\marmore-granito-faculdade\bin\Debug\net7.0\pedr
 C:\Users\joas.neves\Source\Repos\marmore-granito-faculdade\bin\Debug\net7.0\pedra.pdb
 C:\Users\joas.neves\Source\Repos\marmore-granito-faculdade\obj\Debug\net7.0\pedra.genruntimeconfig.cache
 C:\Users\joas.neves\Source\Repos\marmore-granito-faculdade\obj\Debug\net7.0\ref\pedra.dll
+C:\Users\joasg\Source\Repos\joashneves\marmore-granito-faculdade\bin\Debug\net7.0\pedra.exe
+C:\Users\joasg\Source\Repos\joashneves\marmore-granito-faculdade\bin\Debug\net7.0\pedra.deps.json
+C:\Users\joasg\Source\Repos\joashneves\marmore-granito-faculdade\bin\Debug\net7.0\pedra.runtimeconfig.json
+C:\Users\joasg\Source\Repos\joashneves\marmore-granito-faculdade\bin\Debug\net7.0\pedra.dll
+C:\Users\joasg\Source\Repos\joashneves\marmore-granito-faculdade\bin\Debug\net7.0\pedra.pdb
+C:\Users\joasg\Source\Repos\joashneves\marmore-granito-faculdade\obj\Debug\net7.0\pedra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joasg\Source\Repos\joashneves\marmore-granito-faculdade\obj\Debug\net7.0\pedra.AssemblyInfoInputs.cache
+C:\Users\joasg\Source\Repos\joashneves\marmore-granito-faculdade\obj\Debug\net7.0\pedra.AssemblyInfo.cs
+C:\Users\joasg\Source\Repos\joashneves\marmore-granito-faculdade\obj\Debug\net7.0\pedra.csproj.CoreCompileInputs.cache
+C:\Users\joasg\Source\Repos\joashneves\marmore-granito-faculdade\obj\Debug\net7.0\pedra.dll
+C:\Users\joasg\Source\Repos\joashneves\marmore-granito-faculdade\obj\Debug\net7.0\refint\pedra.dll
+C:\Users\joasg\Source\Repos\joashneves\marmore-granito-faculdade\obj\Debug\net7.0\pedra.pdb
+C:\Users\joasg\Source\Repos\joashneves\marmore-granito-faculdade\obj\Debug\net7.0\pedra.genruntimeconfig.cache
+C:\Users\joasg\Source\Repos\joashneves\marmore-granito-faculdade\obj\Debug\net7.0\ref\pedra.dll

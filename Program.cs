@@ -26,18 +26,8 @@ class Program
         double valorVenda;
         string pedreira;
 
-
-        // Criar 10 produtos com valores diferentes
-        CriarProduto(1, 12345, 2.2, "Bloco 1", "Mármore", 50.0, 75.0, "Pedreira A");
-        CriarProduto(2, 67890, 3.3, "Bloco 2", "Granito", 60.0, 80.0, "Pedreira B");
-        CriarProduto(3, 11111, 1.5, "Bloco 3", "Mármore", 45.0, 70.0, "Pedreira A");
-        CriarProduto(4, 22222, 2.8, "Bloco 4", "Granito", 55.0, 85.0, "Pedreira C");
-        CriarProduto(5, 33333, 1.0, "Bloco 5", "Mármore", 40.0, 60.0, "Pedreira B");
-        CriarProduto(6, 44444, 4.2, "Bloco 6", "Granito", 70.0, 100.0, "Pedreira A");
-        CriarProduto(7, 55555, 2.5, "Bloco 7", "Mármore", 48.0, 72.0, "Pedreira C");
-        CriarProduto(8, 66666, 3.7, "Bloco 8", "Granito", 65.0, 90.0, "Pedreira B");
-        CriarProduto(9, 77777, 2.0, "Bloco 9", "Mármore", 42.0, 68.0, "Pedreira A");
-        CriarProduto(10, 88888, 3.0, "Bloco 10", "Granito", 58.0, 78.0, "Pedreira C");
+        //Carrega todos os dados de um TxT
+        CarregarDados();
 
         while (true)
         {
@@ -72,7 +62,9 @@ class Program
                     BuscarBlocoPedreira();
                     break;
                 case 5: // caso o usuario digite 5 ele ele returna a função saindo do switch 
+                    SalvarDados(); // Chama a função de salvar dados antes de sair
                     Console.WriteLine("Encerrando o programa");
+                    Console.ReadKey();
                     return;
                 default:
                     Console.WriteLine("Opção invalida");
@@ -295,7 +287,7 @@ class Program
                 return num; // caso consiga retorna o valor que foi colocado no Console.Read() e devolve como int
 
             }
-            catch // Caso de um erro e ele não consiga passa para int ele entra nessa linha
+            catch (Exception e)// Caso de um erro e ele não consiga passa para int ele entra nessa linha
             {
                 Console.WriteLine("numero invalido! ");
                 Console.WriteLine("Insira um novo numero:"); // Mensagem ao usuario
@@ -315,7 +307,7 @@ class Program
                 num = double.Parse(numero);
                 return num;
             }
-            catch
+            catch (Exception e)
             {
                 Console.WriteLine("numero invalido! ");
                 Console.WriteLine("Insira um novo numero:");
@@ -339,4 +331,76 @@ class Program
         }
 
     }
+
+    // Salva os dados do programa
+    public static void SalvarDados()
+    {
+        
+        // Obtem o diretório atual do aplicativo
+        string diretorioAtual = AppDomain.CurrentDomain.BaseDirectory;
+
+        // Combine o diretório atual com o nome do arquivo
+        string path = Path.Combine(diretorioAtual, "Dados.txt");
+        try
+        {
+            // Cria o arquivo
+            using (StreamWriter sw = new StreamWriter(path, false))
+            {
+                foreach (Produto produto in listaDeProdutos)
+                {
+                    // Salva os dados no txt
+                    sw.WriteLine($"{produto.getId()}/{produto.getNumero()}/{produto.getMedidas()}/{produto.getDescricao()}/{produto.getTipo()}/{produto.getValorCompra()}/{produto.getValorVenda()}/{produto.getPedreira()}");
+                }
+               
+                Console.WriteLine("Dados salvos em: " + Environment.CurrentDirectory);
+            }
+        }
+        catch (Exception e) //Caso ele não consiga criar um arquivo
+        {
+            Console.WriteLine("Não foi possivel salvar os dados");
+        }
+        
+    }
+
+    // Carrega os dados assim que o programa inicializa
+    public static void CarregarDados()
+    {
+        // Obtem o diretório atual do aplicativo
+        string diretorioAtual = AppDomain.CurrentDomain.BaseDirectory;
+
+        // Combine o diretório atual com o nome do arquivo
+        string path = Path.Combine(diretorioAtual, "Dados.txt");
+
+        try
+        {
+            // Verifique se o arquivo existe antes de tentar lê-lo
+            if (File.Exists(path))
+            {
+                // ler o arquivo
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        // le uma linha e divide os dados com "/"
+                        string[] dadosProduto = sr.ReadLine().Split('/');
+
+                        CriarProduto(
+                        int.Parse(dadosProduto[0]),
+                        int.Parse(dadosProduto[1]),
+                        double.Parse(dadosProduto[2]),
+                        dadosProduto[3],
+                        dadosProduto[4],
+                        double.Parse(dadosProduto[5]),
+                        double.Parse(dadosProduto[6]),
+                        dadosProduto[7]
+                    );
+                    }
+                }
+            }
+        } catch (Exception e)  // Acontece quando chega na linha final e não tem nada para mandar para o programa então ele da erro
+        {  
+            return;
+        }
+    }
+
 }

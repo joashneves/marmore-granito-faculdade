@@ -53,7 +53,9 @@ Se o usuário pressionar "4" no menu, ele será direcionado para escolher uma da
 ![pedreiraListar](./img/lista-por-pedreira.png)
 
 ### Sair
-Se o usuário pressionar "5", o programa se encerrará.
+Se o usuário pressionar "5", o programa avisara que salvou, e mostrar o diretorio aonde se encontra o arquivo, e por fim se encerrará.
+
+![AvisoSalvando](./img/AvisoSalvando.png)
 
 ## Erros
 Se algum erro for encontrado, será exibida uma mensagem de alerta com os detalhes do problema.
@@ -61,6 +63,10 @@ Se algum erro for encontrado, será exibida uma mensagem de alerta com os detalh
 Erro por numero em campo errado:
 
 ![numeroErro](./img/numero-invalido.png)
+
+Erro por campo não preenchido:
+
+![StringErro](./img/camponaopreenchido.PNG)
 
 Erro por campo não preenchido:
 

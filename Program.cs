@@ -74,13 +74,15 @@ class Program
     }
 
     //Função para criar produto
-    public static void CriarProduto(int id, int numero, double medidas, string descricao, string tipo, double compra, double venda, string pedreira)
+    public static void CriarProduto(int id, int numero, double medidasComprimento, double medidasLargura, double medidasAltura, string descricao, string tipo, double compra, double venda, string pedreira)
     {
         // Criando um objeto Produto
         Produto produto = new Produto();
         produto.setId(id);
         produto.setNumero(numero);
-        produto.setMedidas(medidas);
+        produto.setMedidasComprimento(medidasComprimento);
+        produto.setMedidasLargura(medidasLargura);
+        produto.setMedidasAltura(medidasAltura);
         produto.setDescricao(descricao);
         produto.setTipo(tipo);
         produto.setValorCompra(compra);
@@ -94,11 +96,31 @@ class Program
     //Acessa a opção 1
     public static void CadastrarBloco()
     {
-        Produto ultimoProduto = listaDeProdutos[listaDeProdutos.Count - 1];
+        Produto ultimoProduto = null; // o ultimo produto para poder pegar o ID como null
+
+        try // Procura pelo o ultimo produto da lista
+        {
+            if (listaDeProdutos.Count > 0)
+            {
+                ultimoProduto = listaDeProdutos[listaDeProdutos.Count - 1];
+            }
+        }
+        catch (Exception e) // Caso for a primeira vez provavelmente dara erro
+        {
+            ultimoProduto = null; // e se ocorrer um erro, define como null
+        }
+
+        // Cria um novo produto se a lista está vazia ou se ocorreu um erro ao acessar o último produto
+        if (ultimoProduto == null)
+        {
+            ultimoProduto = new Produto();
+        }
         //Variaveis do bloco que esta sendo criado
         int id;
         int numero;
-        double medidas;
+        double medidasComprimento;
+        double medidasLargura;
+        double medidasAltura;
         string descricao;
         string tipo;
         int escolhaTipo;
@@ -112,8 +134,13 @@ class Program
         id = ultimoProduto.getId() + 1; //Pega o ultimo objeto criado e seu ID e soma 1
         Console.Write("Numero: ");
         numero = verificarNumInt((Console.ReadLine())); //Da escolha ao usuario de criar um numero
-        Console.Write("Medidas: ");
-        medidas = verificarNumDouble(Console.ReadLine()); //Escolhe as medidas
+        Console.WriteLine("Medidas: ");
+        Console.Write("Medida Comprimento: ");
+        medidasComprimento = verificarNumDouble(Console.ReadLine()); //Escolhe as medidas
+        Console.Write("Medidas Largura: ");
+        medidasLargura = verificarNumDouble(Console.ReadLine()); //Escolhe as medidas
+        Console.Write("Medidas Altura: ");
+        medidasAltura = verificarNumDouble(Console.ReadLine()); //Escolhe as medidas
         Console.Write("Descrição: ");
         descricao = verificarString(Console.ReadLine()); // Coloca a descriação
 
@@ -173,7 +200,9 @@ class Program
         // Cria o produto com os valores cadastrado
         CriarProduto(id,
           numero,
-          medidas,
+          medidasComprimento,
+          medidasLargura,
+          medidasAltura,
           descricao,
           tipo,
           valorCompra,
@@ -194,7 +223,7 @@ class Program
         {
 
             // Acessa função do objeto
-            Console.Write($"{produto.getId()} |   {produto.getNumero()} |    {produto.getMedidas()}  |   {produto.getDescricao()}  |   {produto.getTipo()}  |    R${produto.getValorCompra()}    |      R${produto.getValorVenda()}      |   {produto.getPedreira()} \n");
+            Console.Write($"{produto.getId()} |   {produto.getNumero()} |    {produto.getMedidasComprimento()}x{produto.getMedidasLargura()}x{produto.getMedidasAltura()}  |   {produto.getDescricao()}  |   {produto.getTipo()}  |    R${produto.getValorCompra()}    |      R${produto.getValorVenda()}      |   {produto.getPedreira()} \n");
         }
         Console.ReadKey();
     }
@@ -264,7 +293,7 @@ class Program
             if (produto.getPedreira() == pedreiraEncontrar)  //pedreiraEncontrar)
             {
                 // Acessa função do objeto
-                Console.Write($"{produto.getId()} |   {produto.getNumero()} |    {produto.getMedidas()}  |   {produto.getDescricao()}  |   {produto.getTipo()}  |    R${produto.getValorCompra()}    |      R${produto.getValorVenda()}      |   {produto.getPedreira()} \n");
+                Console.Write($"{produto.getId()} |   {produto.getNumero()} |    {produto.getMedidasComprimento()}x{produto.getMedidasLargura()}x{produto.getMedidasAltura()}  |   {produto.getDescricao()}  |   {produto.getTipo()}  |    R${produto.getValorCompra()}    |      R${produto.getValorVenda()}      |   {produto.getPedreira()} \n");
 
             }
         }
@@ -290,7 +319,7 @@ class Program
             catch (Exception e)// Caso de um erro e ele não consiga passa para int ele entra nessa linha
             {
                 Console.WriteLine("numero invalido! ");
-                Console.WriteLine("Insira um novo numero:"); // Mensagem ao usuario
+                Console.Write("Insira um novo numero(e somente numeros):"); // Mensagem ao usuario
                 numero = Console.ReadLine(); // pede novo numero
             }
         }
@@ -310,7 +339,7 @@ class Program
             catch (Exception e)
             {
                 Console.WriteLine("numero invalido! ");
-                Console.WriteLine("Insira um novo numero:");
+                Console.Write("Insira um novo numero(e somente numeros):");
                 numero = Console.ReadLine();
             }
         }
@@ -349,7 +378,7 @@ class Program
                 foreach (Produto produto in listaDeProdutos)
                 {
                     // Salva os dados no txt
-                    sw.WriteLine($"{produto.getId()}/{produto.getNumero()}/{produto.getMedidas()}/{produto.getDescricao()}/{produto.getTipo()}/{produto.getValorCompra()}/{produto.getValorVenda()}/{produto.getPedreira()}");
+                    sw.WriteLine($"{produto.getId()}/{produto.getNumero()}/{produto.getMedidasComprimento()}/{produto.getMedidasLargura()}/{produto.getMedidasAltura()}/{produto.getDescricao()}/{produto.getTipo()}/{produto.getValorCompra()}/{produto.getValorVenda()}/{produto.getPedreira()}");
                 }
                
                 Console.WriteLine("Dados salvos em: " + Environment.CurrentDirectory);
@@ -388,11 +417,13 @@ class Program
                         int.Parse(dadosProduto[0]),
                         int.Parse(dadosProduto[1]),
                         double.Parse(dadosProduto[2]),
-                        dadosProduto[3],
-                        dadosProduto[4],
-                        double.Parse(dadosProduto[5]),
-                        double.Parse(dadosProduto[6]),
-                        dadosProduto[7]
+                        double.Parse(dadosProduto[3]),
+                        double.Parse(dadosProduto[4]),
+                        dadosProduto[5],
+                        dadosProduto[6],
+                        double.Parse(dadosProduto[7]),
+                        double.Parse(dadosProduto[8]),
+                        dadosProduto[9]
                     );
                     }
                 }

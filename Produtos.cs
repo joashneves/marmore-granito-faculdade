@@ -11,7 +11,9 @@ namespace Produtos
     {
         private int id;
         private int numero;
-        private double medidas;
+        private double medidasComprimento;
+        private double medidasLargura;
+        private double medidasAltura;
         private string descricao;
         private string tipo;
         private double valorCompra;
@@ -38,14 +40,33 @@ namespace Produtos
             return numero;
         }
 
-        public void setMedidas(double medidas)
+        public void setMedidasComprimento(double medidasComprimento)
         {
-            this.medidas = medidas;
+            this.medidasComprimento = medidasComprimento;
         }
 
-        public double getMedidas()
+        public double getMedidasComprimento()
         {
-            return medidas;
+            return medidasComprimento;
+        }
+        public void setMedidasLargura(double medidasLargura)
+        {
+            this.medidasLargura = medidasLargura;
+        }
+
+        public double getMedidasLargura()
+        {
+            return medidasLargura;
+;
+        }
+        public void setMedidasAltura(double medidasAltura)
+        {
+            this.medidasAltura = medidasAltura;
+        }
+
+        public double getMedidasAltura()
+        {
+            return medidasAltura;
         }
 
         public void setDescricao(string descricao)
@@ -102,7 +123,9 @@ namespace Produtos
         {
             Console.WriteLine($"CODIGO: {getId()}");
             Console.WriteLine($"Número: {getNumero()}");
-            Console.WriteLine($"Medidas: {getMedidas()}");
+            Console.WriteLine($"Medidas: {getMedidasComprimento()}");
+            Console.WriteLine($"Medidas: {getMedidasLargura()}");
+            Console.WriteLine($"Medidas: {getMedidasAltura()}");
             Console.WriteLine($"Descrição: {getDescricao()}");
             Console.WriteLine($"Tipo: {getTipo()}");
             Console.WriteLine($"Valor de Compra: {getValorCompra()}");
